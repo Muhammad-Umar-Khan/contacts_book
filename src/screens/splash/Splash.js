@@ -1,21 +1,57 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React, { useEffect } from 'react'
+import {Image, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect} from 'react';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.navigate('Login');
-    }, 10000)
-    return () => clearTimeout(timer)
-  }, [])
+      navigation.replace('Login');
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <View>
-      <Text>Splash Screen</Text>
+    <View style={styles}>
+      <View>
+        <Image
+          source={require('../../assets/images/book.png')}
+          style={imageStyles}
+        />
+      </View>
+      <View style={textStyle}>
+        <Text style={contactsStyles}>Contacts</Text>
+        <Text style={bookStyles}>Book</Text>
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default Splash
+export default Splash;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  padding: 27,
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: '#F5F5F5',
+  flexDirection: 'row',
+  fontFamily: 'Poppins',
+});
+
+const contactsStyles = StyleSheet.create({
+  fontSize: 34,
+  fontWeight: 700,
+});
+
+const bookStyles = StyleSheet.create({
+  fontSize: 24,
+  fontWeight: 400,
+});
+
+const imageStyles = StyleSheet.create({
+  width: 75,
+  height: 75,
+});
+
+const textStyle = StyleSheet.create({
+  paddingLeft: 27,
+});
