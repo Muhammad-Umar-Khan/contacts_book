@@ -1,13 +1,14 @@
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
-import React from 'react';
-import Button from '../../components/Button';
-import {StyleSheet, Text, View} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
+import route from '../../utils/constants/routeConstants';
+import CustomButton from '../../components/CustomButton';
+import FormInput from '../../common/components/FormInput';
 
 const Login = ({navigation}) => {
   const handlePress = () => {
-    navigation.navigate('ContactsList');
+    navigation.navigate(route.TABS);
   };
 
   const initialValues = {
@@ -33,37 +34,30 @@ const Login = ({navigation}) => {
       {({handleChange, handleBlur, handleSubmit, values, errors, touched}) => (
         <View style={styles.container}>
           <Text style={styles.title}>Login</Text>
-          <View style={styles.inputContainer}>
-            <Text style={styles.label}>Email</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="abc@xyz.com"
-              onChangeText={handleChange('email')}
-              onBlur={handleBlur('email')}
-              value={values.email}
-            />
-            {errors?.email && touched?.email && (
-              <Text style={styles.error}>{errors.email}</Text>
-            )}
-          </View>
-          <View style={styles.inputContainer}>
-            <Text style={styles.label}>Password</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="......"
-              secureTextEntry={true}
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
-            />
-            {errors.password && touched.password && (
-              <Text style={styles.error}>{errors.password}</Text>
-            )}
-          </View>
-          <Button
+          <FormInput
+            label="Email"
+            placeholder="abc@xyz.com"
+            name="email"
+            value={values?.email}
+            error={errors?.email}
+            touched={touched?.email}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+          />
+          <FormInput
+            label="Password"
+            placeholder="......"
+            name="password"
+            value={values?.password}
+            error={errors?.password}
+            touched={touched?.password}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+          />
+          <CustomButton
             text="Login"
             color="blue"
-            onHandlePress={handleSubmit}></Button>
+            onHandlePress={handleSubmit}></CustomButton>
         </View>
       )}
     </Formik>
@@ -83,37 +77,5 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontWeight: 'bold',
     marginBottom: 32,
-  },
-  inputContainer: {
-    width: '80%',
-    marginBottom: 16,
-  },
-  input: {
-    height: 51,
-    borderColor: 'gray',
-    padding: 14,
-    fontSize: 20,
-    backgroundColor: '#ECECEC',
-    borderStyle: 'solid',
-    borderWidth: 2,
-    borderColor: '#000000',
-    borderRadius: 15,
-  },
-  error: {
-    color: 'red',
-    marginTop: 4,
-  },
-  label: {
-    color: '#000000',
-    marginBottom: 5,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  button: {
-    marginTop: 32,
-    backgroundColor: 'blue',
-    color: 'white',
-    borderRadius: 4,
-    padding: 8,
   },
 });

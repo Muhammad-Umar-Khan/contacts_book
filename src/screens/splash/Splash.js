@@ -1,10 +1,12 @@
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
+import route from '../../utils/constants/routeConstants';
+const bookImage = require('../../assets/images/book.png');
 
 const Splash = ({navigation}) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Login');
+      navigation.replace(route.LOGIN);
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
@@ -13,7 +15,7 @@ const Splash = ({navigation}) => {
     <View style={styles}>
       <View>
         <Image
-          source={require('../../assets/images/book.png')}
+          source={bookImage}
           style={imageStyles}
         />
       </View>

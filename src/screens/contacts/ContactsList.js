@@ -1,37 +1,54 @@
-import {Image, StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
-import Logo from '../../components/Logo';
+import {Image, StyleSheet, Text, View, FlatList} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Logo from '../../common/components/Logo';
+import {allContacts} from '../../api/fakeApiUser';
+import Search from '../../components/Search';
+import AddContact from '../addContact/AddContact';
+import Logout from '../logout/Logout';
+import route from '../../utils/constants/routeConstants';
+const screenOptions = {headerShown: false};
 
-const allContacts = [
-  {
-    id: 1,
-    name: 'Umar',
-    email: 'umar@gmail.com',
-    DOB: '12/04/1980',
-    phone: '+92-31765908',
-  },
-  {
-    id: 2,
-    name: 'Jake',
-    email: 'jake@gmail.com',
-    DOB: '11/09/1960',
-    phone: '+98-31865456',
-  },
-  {
-    id: 3,
-    name: 'Bob',
-    email: 'bob@gmail.com',
-    DOB: '03/09/1890',
-    phone: '+92-434659654',
-  },
-  {
-    id: 4,
-    name: 'Meghan',
-    email: 'meghan@gmail.com',
-    DOB: '06/04/2010',
-    phone: '+99-3143590987',
-  },
-];
+const Tab = createBottomTabNavigator();
+
+export function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name={route.CONTACTS_LIST}
+        component={ContactsList}
+        options={screenOptions}
+      />
+      <Tab.Screen
+        name={route.ADD_CONTACT}
+        component={AddContact}
+        options={screenOptions}
+      />
+      <Tab.Screen
+        name={route.LOGOUT}
+        component={Logout}
+        options={screenOptions}
+      />
+    </Tab.Navigator>
+  );
+}
+
+const ContactsList = () => {
+  const renderContact = ({item}) => <ContactItem contact={item} />;
+  return (
+    <>
+      <View style={{paddingHorizontal: 33}}>
+        <Logo />
+        <Search />
+        <FlatList
+          data={allContacts}
+          renderItem={renderContact}
+          keyExtractor={item => item.id}
+        />
+      </View>
+    </>
+  );
+};
 
 const ContactItem = ({contact}) => (
   <View style={styles.userContainer}>
@@ -50,22 +67,6 @@ const ContactItem = ({contact}) => (
     />
   </View>
 );
-
-const ContactsList = () => {
-  const renderContact = ({item}) => <ContactItem contact={item} />;
-  return (
-    <>
-      <View style={{paddingHorizontal: 33}}>
-        <Logo />
-        <FlatList
-          data={allContacts}
-          renderItem={renderContact}
-          keyExtractor={item => item.id}
-        />
-      </View>
-    </>
-  );
-};
 
 const styles = StyleSheet.create({
   userContainer: {
@@ -94,18 +95,15 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 24,
     fontWeight: 700,
-    marginBottom: 21,
   },
   userEmail: {
     color: '#000000',
     fontSize: 16,
     fontSize: 16,
-    marginBottom: 21,
   },
   phone: {
     color: '#000000',
     fontSize: 16,
-    marginBottom: 21,
   },
   right_arrow: {
     width: 40,

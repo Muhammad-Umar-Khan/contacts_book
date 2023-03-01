@@ -1,12 +1,17 @@
 import 'react-native-gesture-handler';
-import {enableScreens} from 'react-native-screens';
-enableScreens(true);
 import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import {enableScreens} from 'react-native-screens';
+import {NavigationContainer} from '@react-navigation/native';
 import Splash from './src/screens/splash/Splash';
 import Login from './src/screens/login/Login';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
-import ContactsList from './src/screens/contacts/ContactsList';
+import route from './src/utils/constants/routeConstants';
+import {MyTabs} from './src/screens/contacts/ContactsList';
+
+const screenOptions = {headerShown: false};
+
+enableScreens(true);
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -14,19 +19,19 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Splash"
+          name={route.SPLASH_SCREEN}
           component={Splash}
-          options={{headerShown: false}}
+          options={screenOptions}
         />
         <Stack.Screen
-          name="Login"
+          name={route.LOGIN}
           component={Login}
-          options={{headerShown: false}}
+          options={screenOptions}
         />
         <Stack.Screen
-          name="ContactsList"
-          component={ContactsList}
-          options={{headerShown: false}}
+          name={route.TABS}
+          component={MyTabs}
+          options={screenOptions}
         />
       </Stack.Navigator>
     </NavigationContainer>
