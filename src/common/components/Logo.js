@@ -19,8 +19,10 @@ export default Logo;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 37,
-    marginBottom: 30,
+    backgroundColor: '#FFFFFF',
+    paddingLeft: 33,
+    paddingTop: 37,
+    paddingBottom: 30,
     flexDirection: 'row',
   },
   image: {

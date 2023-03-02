@@ -1,44 +1,35 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View, FlatList} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {allContacts} from '../../api/fakeApiUser';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
+
 import Logo from '../../common/components/Logo';
 import Search from '../../components/Search';
-import AddContact from '../addContact/AddContact';
-import Logout from '../logout/Logout';
-import route from '../../utils/constants/routeConstants';
-const screenOptions = {headerShown: false};
 
-const Tab = createBottomTabNavigator();
-
-export function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name={route.CONTACTS_LIST}
-        component={ContactsList}
-        options={screenOptions}
-      />
-      <Tab.Screen
-        name={route.ADD_CONTACT}
-        component={AddContact}
-        options={screenOptions}
-      />
-      <Tab.Screen
-        name={route.LOGOUT}
-        component={Logout}
-        options={screenOptions}
-      />
-    </Tab.Navigator>
-  );
-}
+import {allContacts} from '../../api/fakeApiUser';
+import routeConstants from '../../utils/constants/routeConstants';
 
 const ContactsList = () => {
-  const renderContact = ({item}) => <ContactItem contact={item} />;
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate(routeConstants.DETAILS);
+  };
+
+  const renderContact = ({item}) => (
+    <ContactItem contact={item} handlePress={handlePress} />
+  );
   return (
     <>
-      <View style={{paddingHorizontal: 33}}>
-        <Logo />
+      <Logo />
+      <View style={styles.mainView}>
         <Search />
         <FlatList
           data={allContacts}
@@ -50,8 +41,8 @@ const ContactsList = () => {
   );
 };
 
-const ContactItem = ({contact}) => (
-  <View style={styles.userContainer}>
+const ContactItem = ({contact, handlePress}) => (
+  <TouchableOpacity style={styles.userContainer} onPress={handlePress}>
     <Image
       style={styles.profileImage}
       source={require('../../assets/images/dummy_image.png')}
@@ -65,7 +56,7 @@ const ContactItem = ({contact}) => (
       style={styles.right_arrow}
       source={require('../../assets/images/right_arrow.png')}
     />
-  </View>
+  </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
@@ -99,7 +90,6 @@ const styles = StyleSheet.create({
   userEmail: {
     color: '#000000',
     fontSize: 16,
-    fontSize: 16,
   },
   phone: {
     color: '#000000',
@@ -108,6 +98,15 @@ const styles = StyleSheet.create({
   right_arrow: {
     width: 40,
     height: 40,
+  },
+  tabBarIcon: {
+    fontSize: 24,
+    width: 24,
+    height: 24,
+  },
+  mainView: {
+    paddingHorizontal: 33,
+    backgroundColor: '#FFFFFF',
   },
 });
 

@@ -29,4 +29,18 @@ export const allContacts = [
     DOB: '06/04/2010',
     phone: '+99-3143590987',
   },
+  {
+    id: 5,
+    name: 'Sam',
+    email: 'sam@gmail.com',
+    DOB: '06/04/2008',
+    phone: '+99-31438765',
+  },
+  {
+    id: 6,
+    name: 'Sam',
+    email: 'sam@gmail.com',
+    DOB: '06/04/2008',
+    phone: '+99-31438765',
+  },
 ];

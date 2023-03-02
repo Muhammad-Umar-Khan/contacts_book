@@ -1,13 +1,15 @@
 import React from 'react';
-import 'react-native-gesture-handler';
 import {createStackNavigator} from '@react-navigation/stack';
 import {enableScreens} from 'react-native-screens';
 import {NavigationContainer} from '@react-navigation/native';
+import 'react-native-gesture-handler';
+
+import BottomTabNavigation from './src/navigation/BottomTabNavigations';
 
 import Splash from './src/screens/splash/Splash';
 import Login from './src/screens/login/Login';
 import routeConstants from './src/utils/constants/routeConstants';
-import {MyTabs} from './src/screens/contacts/ContactsList';
+import Details from './src/screens/contactDetails/Details';
 
 const screenOptions = {headerShown: false};
 
@@ -21,7 +23,8 @@ const screens = [
     component: Splash,
   },
   {id: 2, route: routeConstants.LOGIN, component: Login},
-  {id: 3, route: routeConstants.TABS, component: MyTabs},
+  {id: 3, route: routeConstants.TABS, component: BottomTabNavigation},
+  {id: 4, route: routeConstants.DETAILS, component: Details},
 ];
 
 const App = () => {

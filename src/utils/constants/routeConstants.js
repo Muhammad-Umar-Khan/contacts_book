@@ -5,6 +5,7 @@ const routeConstants = {
   TABS: 'tabs',
   ADD_CONTACT: 'add-contact',
   LOGOUT: 'Logout',
+  DETAILS: 'contact-details',
 };
 
 export default routeConstants;
