@@ -56,22 +56,3 @@ const styles = StyleSheet.create({
     height: 75,
   },
 });
-
-// const contactsStyles = StyleSheet.create({
-//   fontSize: 34,
-//   fontWeight: 700,
-// });
-
-// const bookStyles = StyleSheet.create({
-//   fontSize: 24,
-//   fontWeight: 400,
-// });
-
-// const imageStyles = StyleSheet.create({
-//   width: 75,
-//   height: 75,
-// });
-
-// const textStyle = StyleSheet.create({
-//   paddingLeft: 27,
-// });
