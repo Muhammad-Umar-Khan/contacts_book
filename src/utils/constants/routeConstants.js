@@ -1,4 +1,4 @@
-const route = {
+const routeConstants = {
   SPLASH_SCREEN: 'splash-screen',
   LOGIN: 'login',
   CONTACTS_LIST: 'contacts-list',
@@ -7,4 +7,4 @@ const route = {
   LOGOUT: 'Logout',
 };
 
-export default route;
+export default routeConstants;

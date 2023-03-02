@@ -1,5 +1,6 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
+
 import route from '../../utils/constants/routeConstants';
 const bookImage = require('../../assets/images/book.png');
 
@@ -14,10 +15,7 @@ const Splash = ({navigation}) => {
   return (
     <View style={styles}>
       <View>
-        <Image
-          source={bookImage}
-          style={imageStyles}
-        />
+        <Image source={bookImage} style={imageStyles} />
       </View>
       <View style={textStyle}>
         <Text style={contactsStyles}>Contacts</Text>

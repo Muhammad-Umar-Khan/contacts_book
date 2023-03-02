@@ -1,8 +1,8 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View, FlatList} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Logo from '../../common/components/Logo';
 import {allContacts} from '../../api/fakeApiUser';
+import Logo from '../../common/components/Logo';
 import Search from '../../components/Search';
 import AddContact from '../addContact/AddContact';
 import Logout from '../logout/Logout';

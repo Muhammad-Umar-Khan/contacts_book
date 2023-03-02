@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
+
 import CustomButton from '../../components/CustomButton';
 import FormInput from '../../common/components/FormInput';
 

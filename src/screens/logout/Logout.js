@@ -1,5 +1,6 @@
-import {StyleSheet, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
+
 import CustomButton from '../../components/CustomButton';
 
 const Logout = () => {

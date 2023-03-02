@@ -1,5 +1,6 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
+
 const bookImage = require('../../assets/images/book.png');
 
 const Logo = () => {
