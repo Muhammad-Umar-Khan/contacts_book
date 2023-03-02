@@ -7,10 +7,9 @@ const bookImage = require('../../assets/images/book.png');
 
 const Splash = ({navigation}) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       navigation.replace(route.LOGIN);
     }, 5000);
-    return () => clearTimeout(timer);
   }, [navigation]);
 
   return (
