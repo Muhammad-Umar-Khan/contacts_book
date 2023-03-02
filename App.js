@@ -8,8 +8,9 @@ import BottomTabNavigation from './src/navigation/BottomTabNavigations';
 
 import Splash from './src/screens/splash/Splash';
 import Login from './src/screens/login/Login';
-import routeConstants from './src/utils/constants/routeConstants';
 import Details from './src/screens/contactDetails/Details';
+
+import routeConstants from './src/utils/constants/routeConstants';
 
 const screenOptions = {headerShown: false};
 
