@@ -5,7 +5,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 
 import BottomTabNavigation from './src/navigation/BottomTabNavigations';
-
 import Splash from './src/screens/splash/Splash';
 import Login from './src/screens/login/Login';
 import Details from './src/screens/contactDetails/Details';
