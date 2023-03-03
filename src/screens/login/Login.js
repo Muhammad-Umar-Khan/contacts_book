@@ -8,6 +8,8 @@ import CustomButton from '../../components/CustomButton';
 import FormInput from '../../common/components/FormInput';
 
 import route from '../../utils/constants/routeConstants';
+import {colors} from '../../themes/theme';
+import {scale} from 'react-native-size-matters';
 
 const Login = ({navigation}) => {
   const handlePress = () => {
@@ -77,9 +79,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 34,
-    color: '#000000',
+    fontSize: scale(34),
+    color: colors.text_primary,
     fontWeight: 'bold',
-    marginBottom: 32,
+    marginBottom: scale(32),
   },
 });

@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import CustomButton from '../../components/CustomButton';
 import FormInput from '../../common/components/FormInput';
 import Logo from '../../common/components/Logo';
+import {colors, theme} from '../../themes/theme';
+import {scale} from 'react-native-size-matters';
 
 const initialValues = {
   name: '',
@@ -120,13 +122,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   textInput: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
+    height: scale(40),
+    ...theme.border,
   },
   button: {
-    backgroundColor: 'blue',
-    color: 'white',
+    backgroundColor: colors.secondary,
+    color: colors.background,
     padding: 10,
     textAlign: 'center',
   },

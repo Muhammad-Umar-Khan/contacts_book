@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
+import fonts from '../../themes/fonts';
+import {colors} from '../../themes/theme';
 import route from '../../utils/constants/routeConstants';
 const bookImage = require('../../assets/images/book.png');
 
@@ -31,7 +33,7 @@ export default Splash;
 
 const styles = StyleSheet.create({
   container: {
-    fontFamily: 'Poppins',
+    fontFamily: fonts.primary_font,
     padding: 27,
     flex: 1,
     alignItems: 'center',
@@ -39,13 +41,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   contactsStyles: {
-    fontFamily: 'Poppins-ExtraBold',
-    color: '#000000',
+    fontFamily: fonts.primary_font,
+    color: colors.text_primary,
     fontSize: 34,
     fontWeight: 700,
   },
   bookStyles: {
-    color: '#000000',
+    color: colors.text_primary,
     fontSize: 24,
     fontWeight: 400,
   },

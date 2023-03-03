@@ -1,6 +1,9 @@
+import React from 'react';
 import {useCallback, useEffect, useState} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
+import {scale} from 'react-native-size-matters';
+import {colors} from '../themes/theme';
 const search_icon = require('../assets/images/search_icon.png');
 
 const Search = ({setUsers}) => {
@@ -34,7 +37,7 @@ const Search = ({setUsers}) => {
   return (
     <View style={styles.searchContainer}>
       <TextInput
-        style={styles.searchInput}
+        style={[styles.searchInput]}
         placeholder="Search contact"
         onChangeText={text => handleChange(text)}
         value={search}
@@ -50,21 +53,22 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    paddingHorizontal: 10,
-    height: 51,
-    borderWidth: 2,
-    borderColor: '#000000',
-    borderRadius: 15,
+    backgroundColor: colors.background,
+    paddingHorizontal: scale(10),
+    borderWidth: scale(2),
+    borderColor: colors.text_primary,
+    borderRadius: scale(15),
+    width: scale(350),
+    height: scale(40),
   },
   searchIcon: {
-    width: 33,
-    height: 28,
+    width: scale(33),
+    height: scale(28),
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
+    fontSize: scale(16),
     fontWeight: '400',
-    color: '#A7A7A7',
+    color: colors.mutedText,
   },
 });
