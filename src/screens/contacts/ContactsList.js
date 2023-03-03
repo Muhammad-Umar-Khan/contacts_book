@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   userName: {
+    fontFamily: 'Poppins-Regular',
     color: '#000000',
     fontSize: 24,
     fontWeight: 700,

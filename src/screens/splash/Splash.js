@@ -31,14 +31,15 @@ export default Splash;
 
 const styles = StyleSheet.create({
   container: {
+    fontFamily: 'Poppins',
     padding: 27,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    fontFamily: 'Poppins',
   },
   contactsStyles: {
+    fontFamily: 'Poppins-ExtraBold',
     color: '#000000',
     fontSize: 34,
     fontWeight: 700,
