@@ -60,7 +60,8 @@ const Login = ({navigation}) => {
           <CustomButton
             text="Login"
             color="blue"
-            onHandlePress={handleSubmit}></CustomButton>
+            onHandlePress={handleSubmit}
+          />
         </View>
       )}
     </Formik>
