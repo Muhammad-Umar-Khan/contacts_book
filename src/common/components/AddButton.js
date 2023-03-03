@@ -1,6 +1,5 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-
 import {scale} from 'react-native-size-matters';
 
 const add_image = require('../../assets/images/tabBarIcons/addIcon.png');
