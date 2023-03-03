@@ -8,6 +8,7 @@ import Logout from '../screens/logout/Logout';
 import routeConstants from '../utils/constants/routeConstants';
 import ContactsButton from '../common/components/ContactsButton';
 import LogoutButton from '../common/components/LogoutButton';
+import {scale} from 'react-native-size-matters';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,12 +35,12 @@ function BottomTabNavigation() {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          paddingTop: 10,
+          paddingTop: scale(10),
           justifyContent: 'space-between',
           backgroundColor: '#EBEBEB',
-          height: 80,
-          borderTopLeftRadius: 24,
-          borderTopRightRadius: 24,
+          height: scale(65),
+          borderTopLeftRadius: scale(24),
+          borderTopRightRadius: scale(24),
         },
       }}>
       {tabs?.map(tab => (

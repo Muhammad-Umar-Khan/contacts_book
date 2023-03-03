@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import CustomButton from '../../components/CustomButton';
+import fonts from '../../themes/fonts';
 
 const Logout = () => {
   return (
@@ -25,6 +26,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    fontFamily: 'Poppins',
+    fontFamily: fonts.primary_font,
   },
 });

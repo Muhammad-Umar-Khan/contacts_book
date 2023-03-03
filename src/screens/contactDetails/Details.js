@@ -1,6 +1,10 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {scale} from 'react-native-size-matters';
 import CustomButton from '../../components/CustomButton';
+import fonts from '../../themes/fonts';
+import {colors} from '../../themes/theme';
+const back_image = require('../../assets/images/back_icon.png');
 const user_image = require('../../assets/images/detals_user_image.png');
 
 const Details = ({navigation}) => {
@@ -12,7 +16,7 @@ const Details = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
-          {/* <Image source={user_image} style={styles.backIcon} /> */}
+          <Image source={back_image} style={styles.backIcon} />
           <Text style={styles.backText}>Back</Text>
         </TouchableOpacity>
       </View>
@@ -52,63 +56,69 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   profileImage: {
-    width: 163,
-    height: 163,
-    borderRadius: 80,
-    marginBottom: 16,
-    backgroundColor: '#FFFFFF',
+    width: scale(150),
+    height: scale(150),
+    borderRadius: scale(80),
+    marginBottom: scale(16),
+    backgroundColor: colors.background,
   },
   userName: {
-    color: '#FFFFFF',
-    fontSize: 36,
+    color: colors.background,
+    fontSize: scale(36),
     fontWeight: '700',
-    marginBottom: 8,
+    marginBottom: scale(8),
   },
   phone: {
-    color: '#FFFFFF',
+    color: colors.background,
     fontWeight: '300',
     fontSize: 16,
   },
   lowerSection: {
     flex: 1,
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    backgroundColor: '#FFFFFF',
-    paddingHorizontal: 16,
-    paddingTop: 16,
+    borderTopLeftRadius: scale(24),
+    borderTopRightRadius: scale(24),
+    backgroundColor: colors.background,
+    paddingHorizontal: scale(16),
+    paddingTop: scale(16),
   },
   emailContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomColor: '#E5E5E5',
-    paddingTop: 16,
-    paddingLeft: 16,
+    paddingTop: scale(16),
+    paddingLeft: scale(16),
     fontWeight: '300',
   },
   dobContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: 16,
-    paddingTop: 16,
+    paddingLeft: scale(16),
+    paddingTop: scale(16),
     fontWeight: '300',
   },
   value: {
-    flex: 2,
-    color: '#000000',
-    fontSize: 16,
+    fontFamily: fonts.primary_font,
+    flex: scale(2),
+    color: colors.text_primary,
+    fontSize: scale(16),
   },
   backIcon: {
-    width: 24,
-    height: 24,
-    tintColor: '#FFFFFF',
+    width: scale(24),
+    height: scale(24),
+    tintColor: colors.background,
   },
   backText: {
-    color: '#FFFFFF',
-    fontSize: 18,
-    marginLeft: 12,
+    color: colors.background,
+    fontSize: scale(18),
+    marginLeft: scale(12),
   },
   btns: {
-    marginTop: 120,
+    marginTop: scale(70),
+  },
+  backButton: {
+    paddingLeft: scale(10),
+    paddingTop: scale(20),
+    flexDirection: 'row',
   },
 });
 

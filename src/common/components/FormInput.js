@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
+import {scale} from 'react-native-size-matters';
+import {colors} from '../../themes/theme';
 
 const FormInput = ({
   label,
@@ -36,41 +38,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 34,
-    color: '#000000',
+    fontSize: scale(34),
+    color: colors.text_primary,
     fontWeight: 'bold',
-    marginBottom: 32,
+    marginBottom: scale(32),
   },
   inputContainer: {
     width: '80%',
-    marginBottom: 16,
+    marginBottom: scale(16),
   },
   input: {
-    height: 51,
+    height: scale(50),
     borderColor: 'gray',
-    padding: 14,
+    padding: scale(14),
     fontSize: 20,
     backgroundColor: '#ECECEC',
     borderStyle: 'solid',
-    borderWidth: 2,
-    borderColor: '#000000',
-    borderRadius: 15,
+    borderWidth: scale(2),
+    borderRadius: scale(15),
   },
   error: {
     color: 'red',
     marginTop: 4,
   },
   label: {
-    color: '#000000',
-    marginBottom: 5,
-    fontSize: 16,
+    color: colors.text_primary,
+    marginBottom: scale(5),
+    fontSize: scale(16),
     fontWeight: 'bold',
   },
   button: {
-    marginTop: 32,
+    marginTop: scale(32),
     backgroundColor: 'blue',
     color: 'white',
-    borderRadius: 4,
-    padding: 8,
+    borderRadius: scale(4),
+    padding: scale(8),
   },
 });

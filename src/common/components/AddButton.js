@@ -1,5 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
+import {scale} from 'react-native-size-matters';
+
 const add_image = require('../../assets/images/tabBarIcons/addIcon.png');
 
 const AddButton = () => {
@@ -15,10 +17,10 @@ export default AddButton;
 const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: '#98CEFF',
-    width: 73,
-    height: 73,
+    width: scale(60),
+    height: scale(60),
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 50,
+    borderRadius: scale(50),
   },
 });

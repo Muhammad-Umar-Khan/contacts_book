@@ -1,5 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
+import {scale} from 'react-native-size-matters';
+import {colors} from '../../themes/theme';
 
 const logout_image = require('../../assets/images/tabBarIcons/logout.png');
 
@@ -22,8 +24,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: '700',
-    fontSize: 16,
-    paddingTop: 10,
-    color: '#000000',
+    fontSize: scale(16),
+    marginTop: scale(10),
+    color: colors.text_primary,
   },
 });
